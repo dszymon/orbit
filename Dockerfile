@@ -41,7 +41,7 @@ RUN ORBIT_BUILD_REVISION=${ORBIT_BUILD_REVISION} \
     cargo build --locked --release -p orbit-server \
     && cp target/release/orbit /orbit
 
-FROM alpine:3.23
+FROM alpine:3
 RUN apk add --no-cache bash ca-certificates tzdata postgresql-client sqlite \
     && mkdir -p /var/lib/orbit /var/backups/orbit \
     && chown -R 65532:65532 /var/lib/orbit /var/backups/orbit
